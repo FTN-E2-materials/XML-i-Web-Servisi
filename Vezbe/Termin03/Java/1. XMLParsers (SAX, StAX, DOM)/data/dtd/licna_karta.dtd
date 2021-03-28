@@ -1,0 +1,32 @@
+<!ELEMENT identity_card (owner_info, document_info) >
+
+<!ELEMENT owner_info (name, date_of_birth, place_of_birth, place_of_residence, picture) >
+
+<!ELEMENT name (first_name, middle_name?, last_name) >
+<!ELEMENT first_name ( #PCDATA ) >
+<!ELEMENT middle_name ( #PCDATA ) >
+<!ELEMENT last_name ( #PCDATA ) >
+
+<!ELEMENT date_of_birth ( #PCDATA ) >
+
+<!ELEMENT place_of_birth (country, state?, city, municipality) >
+<!ELEMENT country ( #PCDATA ) >
+<!ELEMENT state ( #PCDATA ) >
+<!ELEMENT city ( #PCDATA ) >
+<!ELEMENT municipality ( #PCDATA ) >
+
+<!ELEMENT place_of_residence (city, street, number, appartment_number?, floor_number?) >
+<!ELEMENT street ( #PCDATA ) >
+<!ELEMENT number ( #PCDATA ) >
+<!ELEMENT appartment_number ( #PCDATA ) >
+<!ELEMENT floor_number ( #PCDATA ) >
+
+<!ELEMENT picture ( #PCDATA ) >
+
+<!ATTLIST owner_info uid CDATA #REQUIRED >
+
+<!ELEMENT document_info (issuing_authority, issuing_date, expiry_date, reg_number) >
+<!ELEMENT issuing_authority ( #PCDATA ) >
+<!ELEMENT issuing_date ( #PCDATA ) >
+<!ELEMENT expiry_date ( #PCDATA ) >
+<!ELEMENT reg_number ( #PCDATA ) >

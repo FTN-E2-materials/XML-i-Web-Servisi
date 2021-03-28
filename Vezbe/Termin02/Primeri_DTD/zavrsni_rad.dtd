@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- DTD for a graduate thesis. -->
+<!ELEMENT zavrsni_rad (naslovna_strana, sadrzaj?, poglavlje*) >
+<!ATTLIST zavrsni_rad 
+                vrsta_rada      CDATA "Diplomski rad"
+                nivo_studija    (oas | mas | das) "oas"
+>
+<!ELEMENT naslovna_strana (institucija, autor, tema_rada) >
+
+<!ELEMENT institucija (univerzitet, fakultet, departman?, katedra?) >
+
+<!ELEMENT univerzitet (#PCDATA) >
+<!ELEMENT fakultet (#PCDATA) >
+<!ELEMENT departman (#PCDATA) >
+<!ELEMENT katedra (#PCDATA) >
+
+<!ELEMENT autor (ime, prezime) >
+<!ATTLIST autor
+                broj_indeksa      CDATA #REQUIRED
+>
+
+<!ELEMENT ime (#PCDATA) >
+<!ELEMENT prezime (#PCDATA) >
+
+<!ELEMENT tema_rada (#PCDATA) >
+
+<!ELEMENT sadrzaj (stavka+) >
+
+<!ELEMENT stavka (#PCDATA) >
+<!ATTLIST stavka
+                broj_strane     CDATA   #REQUIRED 
+>
+                
+<!ELEMENT poglavlje (naslov, pasus+, poglavlje*) >
+<!ELEMENT naslov (#PCDATA) >
+<!ELEMENT pasus (#PCDATA | slika | lista | tabela)* >
+
+<!ELEMENT slika (#PCDATA) >
+<!ATTLIST slika
+                natpis      CDATA   #IMPLIED
+>
+                
+<!ELEMENT lista (element+) >
+<!ATTLIST lista
+                vrsta       (neuređena | uređena)   "neuređena"
+>
+                
+<!ELEMENT element (#PCDATA) >
+
+<!ELEMENT tabela (red+) >
+<!ELEMENT red (celija+) >
+<!ELEMENT celija (#PCDATA) >

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE identity_card SYSTEM "../dtd/licna_karta.dtd">
+<!-- Testirati DTD validaciju dodavanjem npr. test="abc" atributa. -->
+<identity_card>
+    <owner_info uid="AAA-00-000">
+        <name>
+            <first_name>Petar</first_name>
+            <middle_name>Milorad</middle_name>
+            <last_name>Petrović</last_name>
+        </name>
+        <date_of_birth>1994-05-04</date_of_birth>
+        <place_of_birth>
+            <country>Srbija</country>
+            <state>Vojvodina</state>
+            <city>Novi Sad</city>
+            <municipality>Novi Sad</municipality>
+        </place_of_birth>
+        <place_of_residence>
+            <city>Novi Sad</city>
+            <street>Gagarinova</street>
+            <number>45</number>
+            <appartment_number>16</appartment_number>
+            <floor_number>2</floor_number>
+        </place_of_residence>
+        
+        <!-- Base64 encoded image -->
+        <picture>ZGVmYXVsdA==</picture>
+    </owner_info>
+    <document_info>
+        <issuing_authority>PU Novi Sad</issuing_authority>
+        <issuing_date>2012-08-01</issuing_date>
+        <expiry_date>2017-08-01</expiry_date>
+        <reg_number>0004925537</reg_number>
+    </document_info>
+</identity_card>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE zavrsni_rad SYSTEM "zavrsni_rad.dtd">
+<zavrsni_rad nivo_studija="mas" vrsta_rada="Master rad">
+    <naslovna_strana>
+        <institucija>
+            <univerzitet>Univerzitet u Novom Sadu</univerzitet>
+            <fakultet>Fakultet tehničkih nauka</fakultet>
+            <departman>Računarstvo i automatika</departman>
+            <katedra>Katedra za informatiku</katedra>
+        </institucija>
+        <autor broj_indeksa="RA 123/2012">
+            <ime>Petar</ime>
+            <prezime>Petrović</prezime>
+        </autor>
+        <tema_rada>Peter's bachelor thesis</tema_rada>
+    </naslovna_strana>
+    <sadrzaj>
+        <stavka broj_strane="1">1. Uvod</stavka>
+        <stavka broj_strane="5">2. Prvo poglavlje</stavka>
+        <stavka broj_strane="9">3. Zakljucak</stavka>
+    </sadrzaj>
+    <poglavlje>
+        <naslov>Naslov poglavlja</naslov>
+        <pasus>
+            Ovo je neki tekst.
+            <lista vrsta="uređena">
+                <element>Prva stavka</element>
+                <element>Druga stavka</element>
+            </lista>
+            Ovo je nastavak teksta.
+            <tabela>
+                <red>
+                    <celija>Naslov 1</celija>
+                    <celija>Naslov 2</celija>
+                </red>
+                <red>
+                    <celija>Sadrzaj 1</celija>
+                    <celija>Sadrzaj 2</celija>
+                </red>
+            </tabela>
+        </pasus>
+    </poglavlje>
+    <poglavlje>
+        <naslov>Naslov sledeceg poglavlja</naslov>
+        <pasus>Sadrzaj poglavlja... </pasus>
+    </poglavlje>
+</zavrsni_rad>

@@ -1,0 +1,9 @@
+NAPOMENA za example3:
+
+Potrebno je instalirati pakete etree i kosarka komandom go install na nacin objasnjen na vezbama i nakon toga promeniti import u odgovarajucim .go fajlovima.
+
+Linkovi:
+
+encoding/xml -> https://golang.org/pkg/encoding/xml/
+etree -> https://github.com/beevik/etree
+paketi i moduli -> https://golangbyexample.com/packages-modules-go-first/

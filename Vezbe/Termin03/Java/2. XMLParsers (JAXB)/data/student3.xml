@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<student xmlns="http://www.ftn.uns.ac.rs/jaxb/example3" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ftn.uns.ac.rs/jaxb/example3 student.xsd">
+	<polozen_ispit ocena="10" datum="2009-01-17">
+		<predmet>
+			<naziv>Matematika</naziv>
+			<nastavnik>Petar Petrovic</nastavnik>
+			<sk_godina>2007</sk_godina>
+		</predmet>
+	</polozen_ispit>
+	<odslusani_predmeti>
+		<odslusan_predmet>
+			<naziv>Matematika</naziv>
+			<nastavnik>Petar Petrovic</nastavnik>
+			<sk_godina>2007</sk_godina>
+		</odslusan_predmet>
+		<odslusan_predmet>
+			<naziv>Fizika</naziv>
+			<nastavnik>Mirko Miric</nastavnik>
+			<sk_godina>2007</sk_godina>
+		</odslusan_predmet>
+		<odslusan_predmet>
+			<naziv>Organizacija podataka</naziv>
+			<nastavnik>Slavica</nastavnik>
+			<sk_godina>2013</sk_godina>
+		</odslusan_predmet>
+	</odslusani_predmeti>
+</student>

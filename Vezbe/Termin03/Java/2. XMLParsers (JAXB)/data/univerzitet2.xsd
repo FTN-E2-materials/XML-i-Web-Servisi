@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.ftn.uns.ac.rs/jaxb/example2"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.ftn.uns.ac.rs/jaxb/example2" elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+	<xs:element name="fakultet">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="odsek" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="naziv" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="odsek" type="odsekType"/>
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="polozenIspit" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="brojIndeksa" type="xs:int" use="required"/>
+			<xs:attribute name="ime" type="xs:string" use="required"/>
+			<xs:attribute name="prezime" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="polozenIspit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="predmet" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="ocena" type="xs:short" use="required"/>
+			<xs:attribute name="datum" type="xs:date" use="required"/>
+			<xs:attribute name="nastavnik" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="odsekType">
+		<xs:sequence>
+			<xs:element name="studenti">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="student" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="naziv" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

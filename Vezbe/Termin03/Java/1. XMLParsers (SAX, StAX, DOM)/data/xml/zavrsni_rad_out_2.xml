@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<rad xmlns="http://www.ftn.uns.ac.rs/zavrsni_rad" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ftn.uns.ac.rs/zavrsni_rad ../xsd/zavrsni_rad.xsd"
+	vrsta_rada="Master rad">
+	<naslovna_strana xmlns="">
+		<institucija>
+			<univerzitet>Univerzitet u Novom Sadu</univerzitet>
+			<fakultet>Fakultet tehničkih nauka</fakultet>
+			<departman>Računarstvo i automatika</departman>
+			<katedra>Katedra za informatiku</katedra>
+		</institucija>
+		<autor>
+			<ime>Petar</ime>
+			<prezime>Petrović</prezime>
+			<broj_indeksa>RA 1/2012</broj_indeksa>
+		</autor>
+		<tema_rada jezik="srpski">Implementacija podsistema banke u okviru sistema platnog prometa.</tema_rada>
+		<tema_rada jezik="engleski">Implementation of banking subsystem in an electronic payment system.</tema_rada>
+		<nivo_studija>MAS</nivo_studija>
+	</naslovna_strana>
+	<sadrzaj xmlns=""><!--Generisati sadržaj -->
+	</sadrzaj>
+	<poglavlja xmlns=""><!--Analogno, generisati poglavlja -->
+	</poglavlja>
+</rad>

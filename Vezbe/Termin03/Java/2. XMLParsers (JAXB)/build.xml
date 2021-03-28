@@ -1,0 +1,61 @@
+<project name="XMLParsers (JAXB)" default="main" basedir=".">
+
+	<!-- Skript generise potrebne java klase na osnovu XML seme ./data/univerzitet1.xsd
+	     Kako ova XML sema ima samo jedan globalni element, bice izgenerisana samo  jedna klasa (jedan .java fajl)
+	     koji u sebi sadrzi inner klase.
+	     Osim ove klase generisu se i ObjectFactory.java i package-info.java koje trebaju JAXB-u za rad
+	     Sve ove klase se generisu u ./gen folderu, pa ih je potrebno prekopirati u odgovarajuci paket u src fodleru
+	     U inicijalnoj verziji projekta ovo se ne mora raditi jer su klase vec prekopirane.
+	      -->
+	
+    <property name="src.dir" value="${basedir}/src"/>
+  	<property name="lib.dir" value="${basedir}/lib"/>
+  	<property name="bin.dir" value="${basedir}/bin"/>
+  	<property name="data.dir" value="${basedir}/data"/>
+	<property name="gen.dir" value="${basedir}/gen"/>
+	
+	<!-- Task za generisanje objektnog modela na osnovu XSD seme -->
+	<taskdef name="xjc" classname="com.sun.tools.xjc.XJCTask">
+	  <classpath>
+	    <fileset dir="${lib.dir}" includes="*.jar" />
+	  </classpath>
+	</taskdef>
+	
+	<!-- Task za generisanje XSD seme na osnovu objektnog modela -->
+	<taskdef name="schemagen" classname="com.sun.tools.jxc.SchemaGenTask">
+	  <classpath>
+	    <fileset dir="${lib.dir}" includes="*.jar" />
+	  </classpath>
+	</taskdef>
+	
+	<target name="init">
+	    <echo message="basedir = ${basedir}"/>
+	    <echo message="build.compiler = ${build.compiler}"/>
+	    <echo message="java.home = ${java.home}"/>
+	    <echo message="java.class.path = ${java.class.path}"/>
+	</target>
+	
+	<target name="generate_classes_1" depends="init">
+		<xjc schema="${data.dir}/univerzitet1.xsd" destdir="${gen.dir}"/>
+	</target>
+	
+	<target name="generate_classes_2" depends="init">
+		<xjc schema="${data.dir}/univerzitet2.xsd" destdir="${gen.dir}"/>
+	</target>
+	
+	<target name="generate_classes_3" depends="init">
+		<xjc schema="${data.dir}/student3.xsd" destdir="${gen.dir}"/>
+	</target>
+	
+	<!-- Requires JRE6 for ant task execution, ExternalToolsConfiguration -->
+	<target name="generate_schema" depends="init">
+		<schemagen srcdir="${src.dir}/rs/ac/uns/ftn/jaxb/example4" destdir="${gen.dir}">
+			<schema file="address_book4.xsd" namespace="http://www.ftn.uns.ac.rs/jaxb/example4"/>
+		</schemagen>
+	</target>
+		
+	<target name="generate_all" depends="generate_classes_1,generate_classes_2,generate_classes_3,generate_schema"/>
+
+	<target name="main" depends="generate_all"/>
+  
+</project>

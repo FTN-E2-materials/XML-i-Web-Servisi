@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.ftn.uns.ac.rs/zavrsni_rad"
+    targetNamespace="http://www.ftn.uns.ac.rs/zavrsni_rad" elementFormDefault="qualified">
+
+    <xs:element name="rad">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="naslovna_strana">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="institucija">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="univerzitet" type="xs:string"/>
+                                        <xs:element name="fakultet" type="xs:string"/>
+                                        <xs:element minOccurs="0" name="departman" type="xs:string"/>
+                                        <xs:element minOccurs="0" name="katedra" type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="autor">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="ime" type="xs:string"/>
+                                        <xs:element name="prezime" type="xs:string"/>
+                                        <xs:element minOccurs="0" name="broj_indeksa"
+                                            default="RA 1/2012">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                  <xs:pattern
+                                                  value="[a-zA-Z]{1,2} [0-9]{1,3}\/2[0-9]{3}"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="unbounded" name="tema_rada">
+                                <xs:complexType mixed="true">
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string">
+                                            <xs:attribute name="jezik" type="xs:string"/>
+                                        </xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element default="OAS" name="nivo_studija">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="OAS"/>
+                                        <xs:enumeration value="MAS"/>
+                                        <xs:enumeration value="DAS"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sadrzaj" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="stavka">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="naslov_poglavlja" type="xs:string"/>
+                                        <xs:element name="broj_strane">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:int">
+                                                  <xs:minExclusive value="0"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="poglavlja">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" ref="poglavlje"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute default="Diplomski rad" name="vrsta_rada" type="xs:string"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="poglavlje">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="naslov" type="xs:string"/>
+                <xs:element maxOccurs="unbounded" ref="pasus"/>
+                <xs:element ref="poglavlje" maxOccurs="unbounded" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="pasus">
+        <xs:complexType mixed="true">
+            <xs:all>
+                <xs:element name="slika" maxOccurs="1" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="natpis" type="xs:string"/>
+                            <xs:element name="sadrzaj">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:base64Binary"/>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element minOccurs="0" name="lista">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="unbounded" name="stavka" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute default="neuređena" name="vrsta">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="uređena"/>
+                                    <xs:enumeration value="neuređena"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="tabela" maxOccurs="1" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element form="qualified" maxOccurs="unbounded" name="red">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" name="celija"
+                                            type="xs:string"/>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="listing" minOccurs="0">
+                    <xs:complexType mixed="true">
+                        <xs:attribute default="xml" name="jezik">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="java"/>
+                                    <xs:enumeration value="python"/>
+                                    <xs:enumeration value="php"/>
+                                    <xs:enumeration value="c"/>
+                                    <xs:enumeration value="c#"/>
+                                    <xs:enumeration value="xml"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

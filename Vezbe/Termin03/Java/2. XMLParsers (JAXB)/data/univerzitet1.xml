@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fakultet xmlns="http://www.ftn.uns.ac.rs/jaxb/example1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ftn.uns.ac.rs/jaxb/example1 univerzitet1.xsd" naziv="FTN">
+	<odsek id="21" naziv="Racunarstvo">
+		<studenti>
+			<student ime="Marko" prezime="Petrovic" brojIndeksa="7985">
+				<polozenIspit ocena="10" nastavnik="Mirko Mirokovic" datum="2015-09-14">
+					<predmet>Analiza 1</predmet>
+				</polozenIspit>
+			</student>
+			<student ime="Jelena" prezime="Ninkovic" brojIndeksa="8024">
+				<polozenIspit ocena="9" nastavnik="Mira Mirkovic" datum="2014-05-11">
+					<predmet>Programiranje 2</predmet>
+				</polozenIspit>
+			</student>
+		</studenti>
+	</odsek>
+	<odsek id="22" naziv="Menadzment">
+		<studenti>
+			<student ime="Sandra" prezime="Petrovic" brojIndeksa="3651">
+				<polozenIspit ocena="8" nastavnik="Stevan Steovic" datum="2016-01-21">
+					<predmet>Upravljanje 1</predmet>
+				</polozenIspit>
+			</student>
+			<student ime="Jelena" prezime="Ninkovic" brojIndeksa="8024">
+				<polozenIspit ocena="9" nastavnik="Draga Simic" datum="2016-01-22">
+					<predmet>Strategija 1</predmet>
+				</polozenIspit>
+			</student>
+		</studenti>
+	</odsek>
+</fakultet>

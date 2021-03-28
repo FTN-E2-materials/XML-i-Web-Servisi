@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://www.ftn.uns.ac.rs/jaxb/example3"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+	targetNamespace="http://www.ftn.uns.ac.rs/jaxb/example3" elementFormDefault="qualified"
+	attributeFormDefault="unqualified" jxb:version="2.0">
+	<xs:annotation>
+		<xs:appinfo>
+			<jxb:globalBindings collectionType="java.util.Vector"/>
+			<jxb:schemaBindings>
+				<jxb:package name="rs.ac.uns.ftn.jaxb.example3"/>
+			</jxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+	<xs:element name="student">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="polozen_ispit" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:appinfo>
+							<jxb:property name="polozeniIspiti"/>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="odslusani_predmeti" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="polozen_ispit">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="predmet" type="predmetType"/>
+			</xs:sequence>
+			<xs:attribute name="ocena" type="xs:int" use="required"/>
+			<xs:attribute name="datum" use="required">
+				<xs:simpleType>
+					<xs:annotation>
+						<xs:appinfo>
+							<jxb:javaType name="java.util.Date" parseMethod="rs.ac.uns.ftn.jaxb.util.MyDatatypeConverter.parseDate" printMethod="rs.ac.uns.ftn.jaxb.util.MyDatatypeConverter.printDate"/>
+						</xs:appinfo>
+					</xs:annotation>
+					<xs:restriction base="xs:date">
+						<xs:minInclusive value="1900-01-01"/>
+						<xs:maxInclusive value="2200-01-01"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="odslusan_predmet" type="predmetType"/>
+	<xs:complexType name="predmetType">
+		<xs:annotation>
+			<xs:appinfo>
+				<jxb:class name="Predmet"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="naziv" type="xs:string"/>
+			<xs:element name="nastavnik" type="xs:string"/>
+			<xs:element name="sk_godina" type="xs:int">
+				<xs:annotation>
+					<xs:appinfo>
+						<jxb:property name="skolskaGodina"/>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="odslusani_predmeti">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="odslusan_predmet" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:appinfo>
+							<jxb:property name="list"/>
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

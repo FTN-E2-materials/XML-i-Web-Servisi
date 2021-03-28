@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema elementFormDefault="qualified" version="1.0" targetNamespace="http://www.ftn.uns.ac.rs/jaxb/example4" xmlns:adr="http://www.ftn.uns.ac.rs/jaxb/example4" xmlns:tns="http://www.ftn.uns.ac.rs/jaxb/example4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="address_book">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="contacts" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="contact" type="tns:personType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="person" type="tns:personType"/>
+
+  <xs:complexType name="addressType">
+    <xs:sequence>
+      <xs:element name="country" type="xs:string" minOccurs="0"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="street" type="xs:string"/>
+      <xs:element name="number" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="personType">
+    <xs:sequence>
+      <xs:element name="birth_date" type="xs:date" minOccurs="0"/>
+      <xs:element name="phone" type="xs:string" maxOccurs="unbounded"/>
+      <xs:element name="home_address" type="tns:addressType"/>
+      <xs:element name="office_address" type="tns:addressType" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="first_name" type="xs:string" use="required"/>
+    <xs:attribute name="last_name" type="xs:string" use="required"/>
+  </xs:complexType>
+</xs:schema>
+

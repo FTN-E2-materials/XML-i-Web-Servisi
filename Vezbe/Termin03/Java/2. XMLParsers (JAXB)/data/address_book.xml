@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<address_book xmlns="http://www.ftn.uns.ac.rs/jaxb/example4"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.ftn.uns.ac.rs/jaxb/example4 address_book4.xsd">
+	<name>My Address Book</name>
+	<contacts>
+		<contact first_name="Petar" last_name="Petrović">
+			<birth_date>1967-08-13</birth_date>
+			<phone>222-111</phone>
+			<phone>111-222</phone>
+			<home_address>
+				<city>Novi Sad</city>
+				<street>Fruškogorska</street>
+				<number>11</number>
+			</home_address>
+			<office_address>
+				<country>Serbia</country>
+				<city>Novi Sad</city>
+				<street>Trg D. Obradovića</street>
+				<number>6</number>
+			</office_address>
+		</contact>
+		<contact first_name="Jelena" last_name="Ninković">
+			<birth_date>1947-01-12</birth_date>
+			<phone>333-111</phone>
+			<phone>333-222</phone>
+			<home_address>
+				<city>Novi Sad</city>
+				<street>Rumenačka</street>
+				<number>99</number>
+			</home_address>
+		</contact>
+	</contacts>
+</address_book>
