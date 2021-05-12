@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AddressBookService" targetNamespace="http://soap.spring.com/ws/address" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap.spring.com/ws/address" xmlns:ns2="http://jaxb.dev.java.net/array" xmlns:ns1="http://soap.spring.com/ws/address/data" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://jaxb.dev.java.net/array" version="1.0">
+<xs:complexType final="#all" name="stringArray">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap.spring.com/ws/address/data" targetNamespace="http://soap.spring.com/ws/address/data" version="1.0">
+<xs:complexType name="contact">
+<xs:sequence>
+<xs:element name="first_name" type="xs:string"/>
+<xs:element name="last_name" type="xs:string"/>
+<xs:element minOccurs="0" name="email" type="xs:string"/>
+<xs:element minOccurs="0" name="phones">
+<xs:complexType>
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="phone" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="default_phone_index" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType final="#all" name="contactArray">
+<xs:sequence>
+<xs:element maxOccurs="unbounded" minOccurs="0" name="item" nillable="true" type="tns:contact"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="addContactResponse">
+    <wsdl:part name="return" type="xsd:int">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addContactSeparatedResponse">
+    <wsdl:part name="return" type="xsd:int">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeContact">
+    <wsdl:part name="index" type="xsd:int">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addContactSeparated">
+    <wsdl:part name="firstName" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="lastName" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="email" type="xsd:string">
+    </wsdl:part>
+    <wsdl:part name="phones" type="ns2:stringArray">
+    </wsdl:part>
+    <wsdl:part name="defaultPhoneIndex" type="xsd:int">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addContact">
+    <wsdl:part name="contact" type="ns1:contact">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getContactsResponse">
+    <wsdl:part name="return" type="ns1:contactArray">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="removeContactResponse">
+  </wsdl:message>
+  <wsdl:message name="getContactResponse">
+    <wsdl:part name="return" type="ns1:contact">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getContact">
+    <wsdl:part name="index" type="xsd:int">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getContacts">
+  </wsdl:message>
+  <wsdl:portType name="AddressBook">
+    <wsdl:operation name="addContact">
+      <wsdl:input name="addContact" message="tns:addContact">
+    </wsdl:input>
+      <wsdl:output name="addContactResponse" message="tns:addContactResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeContact">
+      <wsdl:input name="removeContact" message="tns:removeContact">
+    </wsdl:input>
+      <wsdl:output name="removeContactResponse" message="tns:removeContactResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContactSeparated">
+      <wsdl:input name="addContactSeparated" message="tns:addContactSeparated">
+    </wsdl:input>
+      <wsdl:output name="addContactSeparatedResponse" message="tns:addContactSeparatedResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContact">
+      <wsdl:input name="getContact" message="tns:getContact">
+    </wsdl:input>
+      <wsdl:output name="getContactResponse" message="tns:getContactResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <wsdl:input name="getContacts" message="tns:getContacts">
+    </wsdl:input>
+      <wsdl:output name="getContactsResponse" message="tns:getContactsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AddressBookServiceSoapBinding" type="tns:AddressBook">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="addContact">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="addContact">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:input>
+      <wsdl:output name="addContactResponse">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeContact">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="removeContact">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:input>
+      <wsdl:output name="removeContactResponse">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContactSeparated">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="addContactSeparated">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:input>
+      <wsdl:output name="addContactSeparatedResponse">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContact">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getContact">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:input>
+      <wsdl:output name="getContactResponse">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <soap:operation soapAction="" style="rpc"/>
+      <wsdl:input name="getContacts">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:input>
+      <wsdl:output name="getContactsResponse">
+        <soap:body use="literal" namespace="http://soap.spring.com/ws/address"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AddressBookService">
+    <wsdl:port name="AddressBookPort" binding="tns:AddressBookServiceSoapBinding">
+      <soap:address location="http://localhost:8080/AddressBookPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://soap.spring.com/ws/address/types"
+    xmlns:inf_type="http://soap.spring.com/ws/address/types" elementFormDefault="qualified">
+    <xs:simpleType name="NameType">
+        <xs:restriction base="xs:string">
+            <xs:length value="20"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="EmailType">
+        <xs:restriction base="xs:string">
+            <xs:length value="30"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="ContactType">
+        <xs:sequence>
+            <xs:element name="firstName" type="inf_type:NameType"/>
+            <xs:element name="lastName" type="inf_type:NameType"/>
+            <xs:element name="email" type="inf_type:EmailType"/>
+            <xs:element name="defaultPhoneIndex" type="xs:int"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="phones" nillable="true"
+                type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ContactsType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="value" nillable="true"
+                type="inf_type:ContactType"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

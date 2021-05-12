@@ -1,0 +1,27 @@
+get posts
+
+GET localhost:8000/post/
+
+-----------------------------
+
+get single post
+
+GET localhost:8000/post/2
+
+-----------------------------
+
+create post
+
+POST localhost:8000/post/
+
+{
+    "title": "test",
+    "text":"hello world",
+    "tags":["hello", "world", "124"]
+}
+
+-----------------------------
+
+delete post
+
+DELETE localhost:8000/post/1

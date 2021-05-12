@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://soap.spring.com/ws/hello/types"
+	xmlns:inf_type="http://soap.spring.com/ws/hello/types" elementFormDefault="qualified">
+	<xs:simpleType name="NameType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="RequestMissType">
+		<xs:sequence>
+			<xs:element name="FirstName" type="inf_type:NameType"/>
+			<xs:element name="LastName" type="inf_type:NameType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="FullNameType">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="41"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="RequestMiss" type="inf_type:RequestMissType"/>
+	<xs:element name="ResponseMiss" type="inf_type:FullNameType"/>
+</xs:schema>

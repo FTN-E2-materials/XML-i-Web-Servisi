@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="HelloDocWrappedService" targetNamespace="http://soap.spring.com/ws/style/doc/wrap" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap.spring.com/ws/style/doc/wrap" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://soap.spring.com/ws/style/doc/wrap" targetNamespace="http://soap.spring.com/ws/style/doc/wrap" version="1.0">
+<xs:element name="sayHello" type="tns:sayHello"/>
+<xs:element name="sayHelloResponse" type="tns:sayHelloResponse"/>
+<xs:complexType name="sayHello">
+<xs:sequence>
+<xs:element minOccurs="0" name="firstName" type="xs:string"/>
+<xs:element minOccurs="0" name="lastName" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="sayHelloResponse">
+<xs:sequence>
+<xs:element minOccurs="0" name="return" type="xs:string"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sayHello">
+    <wsdl:part name="parameters" element="tns:sayHello">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sayHelloResponse">
+    <wsdl:part name="parameters" element="tns:sayHelloResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="HelloDocWrapped">
+    <wsdl:operation name="sayHello">
+      <wsdl:input name="sayHello" message="tns:sayHello">
+    </wsdl:input>
+      <wsdl:output name="sayHelloResponse" message="tns:sayHelloResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HelloDocWrappedServiceSoapBinding" type="tns:HelloDocWrapped">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sayHello">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sayHello">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sayHelloResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelloDocWrappedService">
+    <wsdl:port name="HelloDocWrappedPort" binding="tns:HelloDocWrappedServiceSoapBinding">
+      <soap:address location="http://localhost:8080/HelloDocWrappedPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

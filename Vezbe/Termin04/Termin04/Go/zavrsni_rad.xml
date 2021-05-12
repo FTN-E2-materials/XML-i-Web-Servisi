@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rad xmlns="http://www.ftn.uns.ac.rs/zavrsni_rad"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.ftn.uns.ac.rs/zavrsni_rad ../xsd/zavrsni_rad.xsd"
+    vrsta_rada="Diplomski rad">
+    <naslovna_strana>
+        <institucija>
+            <univerzitet>Univerzitet u Novom Sadu</univerzitet>
+            <fakultet>Fakultet tehničkih nauka</fakultet>
+            <departman>Računarstvo i automatika</departman>
+            <katedra>Katedra za informatiku</katedra>
+        </institucija>
+        <autor>
+            <ime>Petar</ime>
+            <prezime>Petrović</prezime>
+            <broj_indeksa>RA 1/2012</broj_indeksa>
+        </autor>
+        <autor>
+            <ime>Jovan</ime>
+            <prezime>Jovanovic</prezime>
+            <broj_indeksa>RA 2/2012</broj_indeksa>
+        </autor>
+        <tema_rada jezik="srpski">Implementacija podsistema banke u okviru sistema platnog prometa.</tema_rada>
+        <tema_rada jezik="engleski">Implementation of banking subsystem in an electronic payment system.</tema_rada>
+        <nivo_studija>OAS</nivo_studija>
+    </naslovna_strana>
+    <sadrzaj>
+        <stavka>
+            <naslov_poglavlja>1. UVOD</naslov_poglavlja>
+            <broj_strane>1</broj_strane>
+        </stavka>
+        <stavka>
+            <naslov_poglavlja>2. ORGANIZACIJA SISTEMA</naslov_poglavlja>
+            <broj_strane>3</broj_strane>
+        </stavka>
+        <stavka>
+            <naslov_poglavlja>2.1 Učesnici sistema i njihove uloge</naslov_poglavlja>
+            <broj_strane>4</broj_strane>
+        </stavka>
+        <stavka>
+            <naslov_poglavlja>2.1.1 Platni promet</naslov_poglavlja>
+            <broj_strane>4</broj_strane>
+        </stavka>
+    </sadrzaj>
+    <poglavlja>
+        <poglavlje>
+            <naslov>1. UVOD</naslov>
+            <pasus>
+                Ovde ide tekst prvog pasusa uvodnog poglavlja i prateća ilustracija (slika 1.).
+                <slika>
+                    <natpis>Slika 1. Prikaz sistema platnog prometa</natpis>
+                    <sadrzaj>
+                        d2hpbGUoeG1sci5oYXNOZXh0KCkpIHsNCiAgICAgICAgICAgIGV2ZW50VHlwZSA9IHhtbH
+                        IubmV4dCgpOw0KICAgICAgICAgICAgcHJpbnRFdmVudFR5cGUoZXZlbnRUeXBlKTsNCg0K
+                        ICAgICAgICAgICAgLy8gdGhlc2UgZnVuY3Rpb25zIHByaW50IHRoZSBpbmZvcm1hdGlvbi
+                        ANCiAgICAgICAgICAgIC8vIGFib3V0IHRoZSBwYXJ0aWN1bGFyIGV2ZW50IGJ5IGNhbGxp
+                        bmcgDQogICAgICAgICAgICAvLyB0aGUgcmVsZXZhbnQgZnVuY3Rpb24NCiAgICAgICAgIC
+                        AgIHByaW50U3RhcnRFbGVtZW50KHhtbHIpOw0KICAgICAgICAgICAgcHJpbnRFbmRFbGVt
+                        ZW50KHhtbHIpOw0KICAgICAgICAgICAgcHJpbnRUZXh0KHhtbHIpOw0KICAgICAgICAgIC
+                        AgcHJpbnRQSURhdGEoeG1scik7DQogICAgICAgICAgICBwcmludENvbW1lbnQoeG1scik7
+                        DQogICAgICAgIH0=
+                    </sadrzaj>
+                </slika>
+            </pasus>
+            <pasus>
+                Ovde ide tekst drugog pasusa uvodnog poglavlja i uređena lista učesnika sistema.
+                <lista vrsta="uređena">
+                    <stavka>Učesnik br. 1</stavka>
+                    <stavka>Učesnik br. 2</stavka>
+                    <stavka>Učesnik br. 3</stavka>
+                </lista>
+                Još malo teksta koji pojašnjava učesnike sistema.
+            </pasus>
+            <pasus>
+                Sledi detaljniji opis učesnika sistema. Detaljniji opis učesnika sistema. Detaljniji opis učesnika sistema. Detaljniji opis učesnika sistema. Detaljniji opis učesnika sistema. Detaljniji opis učesnika sistema.
+            </pasus>
+        </poglavlje>
+        <poglavlje>
+            <naslov>2. ORGANIZACIJA SISTEMA</naslov>
+            <pasus>
+                Ovde ide tekst prvog pasusa drugog poglavlja, a slede i potpoglavlja.
+            </pasus>
+            <poglavlje>
+                <naslov>2.1 Učesnici sistema i njihove uloge</naslov>
+                <pasus>
+                    Ovde ide tekst prvog pasusa prvog potpoglavlja u drugom poglavlju.
+                </pasus>
+                <poglavlje>
+                    <naslov>2.1.1 Platni promet</naslov>
+                    <pasus>Ovde ide tekst prvog pasusa drugog potpoglavlja. Dosta teksta. Još teksta. I još malo teksta.</pasus>
+                    <pasus>
+                        Ovde ide tekst drugog pasusa, kao i sledeća tabela.
+                        <tabela>
+                            <red>
+                                <celija>Naslov 1</celija>
+                                <celija>Naslov 2</celija>
+                                <celija>Naslov 3</celija>
+                                <celija>Naslov 4</celija>
+                            </red>
+                            <red>
+                                <celija>Sadržaj 1</celija>
+                                <celija>Sadržaj 2</celija>
+                                <celija>Sadržaj 3</celija>
+                                <celija>Sadržaj 4</celija>
+                            </red>
+                            <red>
+                                <celija>Sadržaj 1</celija>
+                                <celija>Sadržaj 2</celija>
+                                <celija>Sadržaj 3</celija>
+                                <celija>Sadržaj 4</celija>
+                            </red>
+                        </tabela>
+                        Još malo teksta u istom pasusu. Tekst koji najavljuje sliku.
+                    </pasus>
+                    <pasus>
+                        Ovde ide tekst trećeg pasusa, najava za sliku 2.
+                        <slika>
+                            <natpis>Slika 2. Nalog za plaćanje</natpis>
+                            <sadrzaj>
+                                WE1MSW5wdXRGYWN0b3J5IGZhY3RvcnkgPSBYTUxJbnB1dEZhY3RvcnkubmV3SW5zdGFuY2
+                                UoKTsNCg0KWE1MRXZlbnRSZWFkZXIgZXZlbnRSZWFkZXIgPQ0KICAgIGZhY3RvcnkuY3Jl
+                                YXRlWE1MRXZlbnRSZWFkZXIoDQogICAgICAgIG5ldyBGaWxlUmVhZGVyKCJkYXRhXHRlc3
+                                QueG1sIikpOw0KDQpYTUxTdHJlYW1SZWFkZXIgc3RyZWFtUmVhZGVyID0NCiAgICBmYWN0
+                                b3J5LmNyZWF0ZVhNTFN0cmVhbVJlYWRlcigNCiAgICAgICAgbmV3IEZpbGVSZWFkZXIoIm
+                                RhdGFcdGVzdC54bWwiKSk7
+                            </sadrzaj>
+                        </slika>
+                        Ovde ide tekst koji opisuje sliku 2 i objašnjava osnovne elemente naloga za plaćanje..
+                    </pasus>
+                </poglavlje>
+            </poglavlje>
+        </poglavlje>
+    </poglavlja>
+</rad>

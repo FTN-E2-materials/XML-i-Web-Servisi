@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="HelloDocumentService"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:inf="http://soap.spring.com/ws/hello" xmlns:inf_type="http://soap.spring.com/ws/hello/types"
+	targetNamespace="http://soap.spring.com/ws/hello">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://soap.spring.com/ws/hello/types"
+			xmlns:inf_type="http://soap.spring.com/ws/hello/types"
+			elementFormDefault="qualified">
+			
+			<xsd:element name="RequestMiss" type="inf_type:RequestMissType" />
+			<xsd:element name="ResponseMiss" type="inf_type:FullNameType" />
+			
+			<xsd:simpleType name="NameType">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="100" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="RequestMissType">
+				<xsd:sequence>
+					<xsd:element name="FirstName" type="inf_type:NameType" />
+					<xsd:element name="LastName" type="inf_type:NameType" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:simpleType name="FullNameType">
+				<xsd:restriction base="xsd:string">
+					<xsd:maxLength value="41" />
+				</xsd:restriction>
+			</xsd:simpleType>
+
+			
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="sayHelloMissRequest">
+		<wsdl:part name="RequestMiss" element="inf_type:RequestMiss" />
+	</wsdl:message>
+	<wsdl:message name="sayHelloMissResponse">
+		<wsdl:part name="ResponseMiss" element="inf_type:ResponseMiss" />
+	</wsdl:message>
+	<wsdl:portType name="HelloDocument">
+		<wsdl:operation name="sayHelloMiss">
+			<wsdl:input message="inf:sayHelloMissRequest" />
+			<wsdl:output message="inf:sayHelloMissResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="HelloDocumentServiceSoapBinding" type="inf:HelloDocument">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="sayHelloMiss">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="HelloDocumentService">
+		<wsdl:port name="HelloDocumentPort" binding="inf:HelloDocumentServiceSoapBinding">
+			<soap:address location="http://localhost:8080/Hello" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

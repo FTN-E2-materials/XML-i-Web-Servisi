@@ -1,0 +1,299 @@
+<liga>
+	<naziv>Evroliga</naziv>
+	<sediste>Barselona</sediste>
+	<datumosnivanja>14.12.1957.</datumosnivanja>
+	<predsednik>
+		<ime>Zordi</ime>
+		<prezime>Bertomeu</prezime>
+	</predsednik>
+	<klubovi>
+		<!-- Barcelona -->
+		<klub>
+			<naziv>Barselona</naziv>
+			<lokacija>
+				<grad>Barselona</grad>
+				<drzava>Spanija</drzava>
+			</lokacija>
+			<arena>
+				<naziv>Blaugrana</naziv>
+				<kapacitet>12000</kapacitet>
+			</arena>
+			<brojpobeda>23</brojpobeda>
+			<brojporaza>8</brojporaza>
+			<igraci>
+				<igrac id="igrac1">
+					<ime>Nikola</ime>
+					<prezime>Mirotic</prezime>
+					<datumrodjenja>13.02.1992.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Podgorica</grad>
+						<drzava>Crna Gora</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">210</visina>
+					<tezina jedinica="kg">105</tezina>
+					<pozicija>Krilni centar</pozicija>
+					<ppg>19.5</ppg>
+					<rpg>8.6</rpg>
+					<apg>3.5</apg>
+					<ukupnopoena>256</ukupnopoena>
+				</igrac>
+				<igrac id="igrac2">
+					<ime>Nik</ime>
+					<prezime>Kalates</prezime>
+					<datumrodjenja>18.12.1987.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Atina</grad>
+						<drzava>Grcka</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">200</visina>
+					<tezina jedinica="kg">96</tezina>
+					<pozicija>Plejmejker</pozicija>
+					<ppg>10.5</ppg>
+					<rpg>6.6</rpg>
+					<apg>7.5</apg>
+					<ukupnopoena>129</ukupnopoena>
+				</igrac>
+			</igraci>
+		</klub>
+		<!-- Real Madrid -->
+		<klub>
+			<naziv>Real Madrid</naziv>
+			<lokacija>
+				<grad>Madird</grad>
+				<drzava>Spanija</drzava>
+			</lokacija>
+			<arena>
+				<naziv>Palata sportova</naziv>
+				<kapacitet>14000</kapacitet>
+			</arena>
+			<brojpobeda>19</brojpobeda>
+			<brojporaza>12</brojporaza>
+			<igraci>
+				<igrac id="igrac3">
+					<ime>Serhio</ime>
+					<prezime>Ljulj</prezime>
+					<datumrodjenja>20.06.1988.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Madrid</grad>
+						<drzava>Spanija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">192</visina>
+					<tezina jedinica="kg">90</tezina>
+					<pozicija>Plejmejker</pozicija>
+					<ppg>11.3</ppg>
+					<rpg>2.5</rpg>
+					<apg>5.5</apg>
+					<ukupnopoena>165</ukupnopoena>
+				</igrac>
+				<igrac id="igrac4">
+					<ime>Rudi</ime>
+					<prezime>Fernandez</prezime>
+					<datumrodjenja>11.09.1985.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Valensija</grad>
+						<drzava>Spanija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">203</visina>
+					<tezina jedinica="kg">93</tezina>
+					<pozicija>Krilo</pozicija>
+					<ppg>8.4</ppg>
+					<rpg>3.6</rpg>
+					<apg>2.5</apg>
+					<ukupnopoena>115</ukupnopoena>
+				</igrac>
+			</igraci>
+		</klub>
+		<!-- Efes -->
+		<klub>
+			<naziv>Efes</naziv>
+			<lokacija>
+				<grad>Istanbul</grad>
+				<drzava>Turska</drzava>
+			</lokacija>
+			<arena>
+				<naziv>Sinana Erdem Arena</naziv>
+				<kapacitet>9000</kapacitet>
+			</arena>
+			<brojpobeda>20</brojpobeda>
+			<brojporaza>13</brojporaza>
+			<igraci>
+				<igrac id="igrac5">
+					<ime>Vasilije</ime>
+					<prezime>Micic</prezime>
+					<datumrodjenja>13.01.1994.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Kraljevo</grad>
+						<drzava>Srbija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">197</visina>
+					<tezina jedinica="kg">94</tezina>
+					<pozicija>Plejmejker</pozicija>
+					<ppg>18.1</ppg>
+					<rpg>3.5</rpg>
+					<apg>5.5</apg>
+					<ukupnopoena>201</ukupnopoena>
+				</igrac>
+				<igrac id="igrac6">
+					<ime>Sejn</ime>
+					<prezime>Larkin</prezime>
+					<datumrodjenja>02.10.1992.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Sinsinati</grad>
+						<drzava>Sjedinjene Americke Drzave</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">182</visina>
+					<tezina jedinica="kg">85</tezina>
+					<pozicija>Plejmejker</pozicija>
+					<ppg>17.5</ppg>
+					<rpg>4.6</rpg>
+					<apg>4.5</apg>
+					<ukupnopoena>198</ukupnopoena>
+				</igrac>
+			</igraci>
+		</klub>
+		<!-- Fenerbahce -->
+		<klub>
+			<naziv>Fenerbahce</naziv>
+			<lokacija>
+				<grad>Istanbul</grad>
+				<drzava>Turska</drzava>
+			</lokacija>
+			<arena>
+				<naziv>Ulker Sport Arena</naziv>
+				<kapacitet>12000</kapacitet>
+			</arena>
+			<brojpobeda>19</brojpobeda>
+			<brojporaza>12</brojporaza>
+			<igraci>
+				<igrac id="igrac7">
+					<ime>Jan</ime>
+					<prezime>Veseli</prezime>
+					<datumrodjenja>24.04.1990.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Ostrava</grad>
+						<drzava>Ceska</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">213</visina>
+					<tezina jedinica="kg">110</tezina>
+					<pozicija>Centar</pozicija>
+					<ppg>15.3</ppg>
+					<rpg>7.5</rpg>
+					<apg>2.5</apg>
+					<ukupnopoena>189</ukupnopoena>
+				</igrac>
+				<igrac id="igrac8">
+					<ime>Marko</ime>
+					<prezime>Guduric</prezime>
+					<datumrodjenja>08.03.1995.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Priboj</grad>
+						<drzava>Srbija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">198</visina>
+					<tezina jedinica="kg">97</tezina>
+					<pozicija>Krilo</pozicija>
+					<ppg>10.6</ppg>
+					<rpg>4.6</rpg>
+					<apg>4.5</apg>
+					<ukupnopoena>99</ukupnopoena>
+				</igrac>
+			</igraci>
+		</klub>
+		<!-- Partizan -->
+		<klub>
+			<naziv>Partizan</naziv>
+			<lokacija>
+				<grad>Beograd</grad>
+				<drzava>Srbija</drzava>
+			</lokacija>
+			<arena>
+				<naziv>Beogradska Arena</naziv>
+				<kapacitet>20000</kapacitet>
+			</arena>
+			<brojpobeda>12</brojpobeda>
+			<brojporaza>11</brojporaza>
+			<igraci>
+				<igrac id="igrac9">
+					<ime>Novica</ime>
+					<prezime>Velickovic</prezime>
+					<datumrodjenja>05.10.1986.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Beograd</grad>
+						<drzava>Srbija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">205</visina>
+					<tezina jedinica="kg">100</tezina>
+					<pozicija>Krilni centar</pozicija>
+					<ppg>12.7</ppg>
+					<rpg>6.9</rpg>
+					<apg>2.1</apg>
+					<ukupnopoena>173</ukupnopoena>
+				</igrac>
+				<igrac id="igrac10">
+					<ime>Ognjen</ime>
+					<prezime>Jaramaz</prezime>
+					<datumrodjenja>01.09.1995.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Krusevac</grad>
+						<drzava>Srbija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">188</visina>
+					<tezina jedinica="kg">85</tezina>
+					<pozicija>Plejmejker</pozicija>
+					<ppg>9.7</ppg>
+					<rpg>4.6</rpg>
+					<apg>5.8</apg>
+					<ukupnopoena>144</ukupnopoena>
+				</igrac>
+			</igraci>
+		</klub>
+		<!-- Crvena Zvezda -->
+		<klub>
+			<naziv>Crvena Zvezda</naziv>
+			<lokacija>
+				<grad>Beograd</grad>
+				<drzava>Srbija</drzava>
+			</lokacija>
+			<arena>
+				<naziv>Beogradska Arena</naziv>
+				<kapacitet>20000</kapacitet>
+			</arena>
+			<brojpobeda>12</brojpobeda>
+			<brojporaza>11</brojporaza>
+			<igraci>
+				<igrac id="igrac11">
+					<ime>Dejan</ime>
+					<prezime>Davidovac</prezime>
+					<datumrodjenja>17.01.1995.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Zrenjanin</grad>
+						<drzava>Srbija</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">203</visina>
+					<tezina jedinica="kg">95</tezina>
+					<pozicija>Krilo</pozicija>
+					<ppg>13.4</ppg>
+					<rpg>4.9</rpg>
+					<apg>3.1</apg>
+					<ukupnopoena>185</ukupnopoena>
+				</igrac>
+				<igrac id="igrac12">
+					<ime>Dzordan</ime>
+					<prezime>Lojd</prezime>
+					<datumrodjenja>27.07.1993.</datumrodjenja>
+					<mestorodjenja>
+						<grad>Cikago</grad>
+						<drzava>Sjedinjene Americke Drzave</drzava>
+					</mestorodjenja>
+					<visina jedinica="cm">193</visina>
+					<tezina jedinica="kg">96</tezina>
+					<pozicija>Plejmejker</pozicija>
+					<ppg>16.7</ppg>
+					<rpg>3.6</rpg>
+					<apg>4.8</apg>
+					<ukupnopoena>196</ukupnopoena>
+				</igrac>
+			</igraci>
+		</klub>
+	</klubovi>
+</liga>

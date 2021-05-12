@@ -1,0 +1,33 @@
+<prodavnica>
+    <!-- Sjajna knjiga. -->
+    <knjiga id="b0836217462" dostupna="true">
+        <isbn>0836217462</isbn>
+        <naslov lang="en">Being a Dog Is a Full-Time Job</naslov>
+        <autor id="a1">
+            <ime>Charles M Schulz</ime>
+            <rodjen>1922-11-26</rodjen>
+            <umro>2000-02-12</umro>
+        </autor>
+        <cena valuta="din">300</cena>
+    </knjiga>
+    <knjiga id="a0000000000" dostupna="false">
+        <isbn>0836211111</isbn>
+        <naslov lang="sr">Majstor i Margarita</naslov>
+        <autor id="a2">
+            <ime>Mihail Bulgakov</ime>
+            <rodjen>1891-05-15</rodjen>
+            <umro>1940-03-10</umro>
+        </autor>
+        <cena valuta="din">800</cena>
+    </knjiga>
+    <knjiga id="a0000000001" dostupna="true">
+        <isbn>0836215511</isbn>
+        <naslov lang="sr">Zivotinjska farma</naslov>
+        <autor id="a3">
+            <ime>Dzordz Orvel</ime>
+            <rodjen>1903-06-25</rodjen>
+            <umro>1950-01-21</umro>
+        </autor>
+        <cena valuta="din">450</cena>
+    </knjiga>
+</prodavnica>

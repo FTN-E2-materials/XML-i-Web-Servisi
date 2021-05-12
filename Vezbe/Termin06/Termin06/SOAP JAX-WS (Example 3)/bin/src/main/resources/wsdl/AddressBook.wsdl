@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="AddressBookService"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:inf="http://soap.spring.com/ws/address" xmlns:inf_type="http://soap.spring.com/ws/address/types"
+	targetNamespace="http://soap.spring.com/ws/address">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://soap.spring.com/ws/address/types"
+			xmlns:inf_type="http://soap.spring.com/ws/address/types"
+			elementFormDefault="qualified">
+			<xsd:simpleType name="NameType">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="20" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:simpleType name="EmailType">
+				<xsd:restriction base="xsd:string">
+					<xsd:length value="30" />
+				</xsd:restriction>
+			</xsd:simpleType>
+			<xsd:complexType name="ContactType">
+				<xsd:sequence>
+					<xsd:element name="firstName" type="inf_type:NameType" />
+					<xsd:element name="lastName" type="inf_type:NameType" />
+					<xsd:element name="email" type="inf_type:EmailType" />
+					<xsd:element name="defaultPhoneIndex" type="xsd:int" />
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="phones"
+						nillable="true" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="ContactsType">
+				<xsd:sequence>
+					<xsd:element maxOccurs="unbounded" minOccurs="0" name="value"
+						nillable="true" type="inf_type:ContactType" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="addContactRequest">
+		<wsdl:part name="contact" type="inf_type:ContactType" />
+	</wsdl:message>
+	<wsdl:message name="addContactResponse" />
+	<wsdl:message name="getContactRequest">
+		<wsdl:part name="index" type="xsd:int" />
+	</wsdl:message>
+	<wsdl:message name="getContactResponse">
+		<wsdl:part name="result" type="inf_type:ContactType" />
+	</wsdl:message>
+	<wsdl:message name="getContactByNameRequest">
+		<wsdl:part name="firstName" type="inf_type:NameType" />
+		<wsdl:part name="lastName" type="inf_type:NameType" />
+	</wsdl:message>
+	<wsdl:message name="getContactByNameResponse">
+		<wsdl:part name="result" type="inf_type:ContactType" />
+	</wsdl:message>
+	<wsdl:message name="getAllContactsRequest" />
+	<wsdl:message name="getAllContactsResponse">
+		<wsdl:part name="result" type="inf_type:ContactsType" />
+	</wsdl:message>
+	<wsdl:portType name="AddressBook">
+		<wsdl:operation name="addContact">
+			<wsdl:input message="inf:addContactRequest" />
+			<wsdl:output message="inf:addContactResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getContact">
+			<wsdl:input message="inf:getContactRequest" />
+			<wsdl:output message="inf:getContactResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getContactByName" parameterOrder="firstName lastName">
+			<wsdl:input message="inf:getContactByNameRequest" />
+			<wsdl:output message="inf:getContactByNameResponse" />
+		</wsdl:operation>
+		<wsdl:operation name="getAllContacts">
+			<wsdl:input message="inf:getAllContactsRequest" />
+			<wsdl:output message="inf:getAllContactsResponse" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AddressBookServiceSoapBinding" type="inf:AddressBook">
+		<soap:binding style="rpc"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="addContact">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getContact">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getContactByName">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getAllContacts">
+			<soap:operation soapAction="" />
+			<wsdl:input>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					namespace="http://soap.spring.com/xmlws/address" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AddressBookService">
+		<wsdl:port name="AddressBookPort" binding="inf:AddressBookServiceSoapBinding">
+			<soap:address location="http://localhost:8080/AddressBook" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Obavezno da bi iskljucili logovanje prilikom pokretanje primera u com.spring.rest.client, a ostalo za springframework -->
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	<logger name="org.springframework" level="INFO"/>
+	<logger name="org.springframework.web" level="INFO"/>
+</configuration>
