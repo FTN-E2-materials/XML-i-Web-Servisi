@@ -1,0 +1,45 @@
+version: '3'
+services: 
+  db:
+    restart: always
+    image: postgres
+    container_name: postgres
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
+    ports:
+      - "8001:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+  tracing:
+    image: jaegertracing/all-in-one
+    container_name: jaeger
+    ports:
+      - "6831:6831/udp"
+      - "6832:6832/udp"
+      - "16686:16686"
+      - "14268:14268"
+      - "14250:14250"
+  app:
+    build: .
+    restart: always
+    environment:
+      - JAEGER_SERVICE_NAME=posts
+      - JAEGER_AGENT_HOST=tracing
+      - JAEGER_AGENT_PORT=6831     
+      - JAEGER_SAMPLER_MANAGER_HOST_PORT=jaeger:5778
+      - JAEGER_SAMPLER_TYPE=const
+      - JAEGER_SAMPLER_PARAM=1
+      - DBHOST=db
+      - USER=postgres
+      - PASSWORD=postgres
+      - DBNAME=postgres
+      - DBPORT=5432
+    expose:
+      - 8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+volumes:
+  pgdata:
